@@ -64,6 +64,13 @@ PRODUCT_PACKAGES += \
     init.recovery.bacon.rc \
     ueventd.bacon.rc
 
+# USB debugging at boot
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.sys.usb.config=mtp,adb \
+ro.adb.secure=0 \
+ro.secure=0 \
+ro.debuggable=1
+
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.lineage.build.vendor_security_patch=2016-09-01
