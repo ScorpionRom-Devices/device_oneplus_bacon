@@ -62,6 +62,7 @@ TARGET_RECOVERY_FSTAB := device/oneplus/bacon/rootdir/etc/fstab.recovery
 # SELinux
 BOARD_SEPOLICY_DIRS += \
     device/oneplus/bacon/sepolicy
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 19
