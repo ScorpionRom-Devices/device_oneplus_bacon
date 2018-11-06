@@ -1,6 +1,4 @@
-#
-# Copyright (C) 2015-2016 The CyanogenMod Project
-#               2017-2018 The LineageOS Project
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,22 +12,30 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit framework first
+# Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from bacon device
 $(call inherit-product, device/oneplus/bacon/bacon.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Enhanced NFC
+#$(call inherit-product, vendor/gzosp/config/nfc_enhanced.mk)
 
-PRODUCT_NAME := lineage_bacon
+# Inherit some common Gzosp stuff.
+$(call inherit-product, vendor/gzosp/config/common_full_phone.mk)
+
+PRODUCT_NAME := gzosp_bacon
 PRODUCT_DEVICE := bacon
-PRODUCT_BRAND := oneplus
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_MODEL := A0001
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
+
+PRODUCT_BRAND := oneplus
+TARGET_VENDOR := oneplus
+TARGET_VENDOR_PRODUCT_NAME := bacon
+TARGET_VENDOR_DEVICE_NAME := A0001
+PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=A0001 PRODUCT_NAME=bacon
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="bacon-user 6.0.1 MHC19Q ZNH2KAS1KN release-keys" \
