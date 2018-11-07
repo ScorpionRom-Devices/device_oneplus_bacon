@@ -56,6 +56,14 @@ TARGET_SYSTEM_PROP += device/oneplus/bacon/system.prop
 # Recovery
 TARGET_RECOVERY_FSTAB := device/oneplus/bacon/rootdir/etc/fstab.recovery
 
+# Dexpreopt
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY ?= false
+    WITH_DEXPREOPT := true
+  endif
+endif
+
 # SELinux
 BOARD_SEPOLICY_DIRS += \
     device/oneplus/bacon/sepolicy
