@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/gzosp_bacon.mk
+    $(LOCAL_DIR)/scorpion_bacon.mk
